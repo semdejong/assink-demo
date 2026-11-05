@@ -2,9 +2,8 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { content } from "@/content";
 import { ctaType } from "@/lib/cta";
-import { Mark } from "./Fan";
-
-const glassSwatches = ["#2f4a3a", "#1f3329", "#7a4a2a", "#4e301c", "#e26f1e", "#f0d2b4", "#3e5c4a", "#5c3820", "#211c17"];
+import { Fan, Mark } from "./Fan";
+import { chipStyle } from "@/lib/chip";
 
 export function Section({
   id,
@@ -94,15 +93,86 @@ export function BtwBlock() {
   );
 }
 
-export function GlassList() {
+export function GlassList({ detailed = false }: { detailed?: boolean }) {
+  if (detailed) {
+    return (
+      <ul className="gloss">
+        {content.glass.map((item) => (
+          <li key={item.name} style={{ ["--swatch" as string]: item.color }}>
+            <span className="gloss-name">{item.name}</span>
+            <span className="gloss-text">{item.text}</span>
+          </li>
+        ))}
+      </ul>
+    );
+  }
   return (
     <ul className="catalogue">
-      {content.glass.map((item, index) => (
-        <li key={item} style={{ ["--swatch" as string]: glassSwatches[index % glassSwatches.length] }}>
-          {item}
+      {content.glass.map((item) => (
+        <li key={item.name} style={{ ["--swatch" as string]: item.color }}>
+          {item.name}
         </li>
       ))}
     </ul>
+  );
+}
+
+export function ElementRow() {
+  return (
+    <div className="quad">
+      {content.elements.map((item) => (
+        <article key={item.name} style={{ ["--swatch" as string]: item.color }}>
+          <h3>{item.name}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export function LayerRow() {
+  return (
+    <div className="quad quad-five">
+      {content.layers.map((item) => (
+        <article key={item.name} style={{ ["--swatch" as string]: item.color }}>
+          <h3>{item.name}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export function Chapter({
+  kicker,
+  title,
+  lede,
+  color,
+  ink = "#211c17",
+  fan = "-6deg",
+  children,
+}: {
+  kicker: string;
+  title: string;
+  lede: string;
+  color: string;
+  ink?: string;
+  fan?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <header className="chapter" data-section="intro">
+      <Fan>
+        <span className="chip chapter-chip" style={chipStyle({ fan, color, ink })}>
+          <span className="chip-label">{kicker}</span>
+        </span>
+      </Fan>
+      <div>
+        <h1>{title}</h1>
+        <p className="lede">{lede}</p>
+        {children}
+      </div>
+    </header>
   );
 }
 

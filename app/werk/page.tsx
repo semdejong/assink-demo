@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { platesByTag } from "@/content";
 import { Plate } from "@/components/site/Plate";
-import { CtaRow, Section } from "@/components/site/Parts";
+import { Chapter, CtaRow, Section } from "@/components/site/Parts";
 
 export const metadata: Metadata = {
   title: "Staalboek",
@@ -63,15 +63,39 @@ const groups = [
 export default function WerkPage() {
   return (
     <>
-      <header className="intro" data-section="intro">
-        <p className="kicker">Staalboek</p>
-        <h1>Uitgevoerd werk</h1>
-        <p className="lede">
-          Elke plaat is een opname uit ons werk, met de naam en het materiaal eronder. De foto’s blijven op hun eigen
-          formaat.
-        </p>
+      <Chapter
+        kicker="Platen"
+        title="Uitgevoerd werk"
+        lede="Elke plaat is een opname uit ons werk, met de naam en het materiaal eronder. De foto’s blijven op hun eigen formaat, zoals een staal in een waaier zijn eigen maat houdt."
+        color="#4e301c"
+        ink="#f3ece0"
+        fan="-4deg"
+      >
         <CtaRow />
-      </header>
+      </Chapter>
+
+      <Section
+        name="leeswijzer"
+        title="Hoe u dit staalboek leest"
+        color="#e4d3b8"
+        fan="3deg"
+        lede="Eerst de opname, dan de naam, dan het materiaal. Zo staat het onder elke plaat."
+      >
+        <div className="ways">
+          <article style={{ ["--rule-color" as string]: "#e26f1e" }}>
+            <h3>De maat</h3>
+            <p>Een smalle opname blijft smal. Wij rekken geen foto op tot de rand van het scherm.</p>
+          </article>
+          <article style={{ ["--rule-color" as string]: "#2f4a3a" }}>
+            <h3>De naam</h3>
+            <p>Onder de plaat staat wat u ziet: een kerk, een keuken, een dorpel, een blad met nerf.</p>
+          </article>
+          <article style={{ ["--rule-color" as string]: "#7a4a2a" }}>
+            <h3>Het materiaal</h3>
+            <p>Daarnaast staat waarmee het gemaakt is: schilderwerk, bladgoud, behang, mortel, lijnolie.</p>
+          </article>
+        </div>
+      </Section>
       {groups.map((group) => (
         <Section key={group.name} name={group.name} title={group.title} color={group.color} fan={group.fan} lede={group.lede}>
           <div className="plates">

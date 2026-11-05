@@ -180,8 +180,12 @@ export default function Home() {
             width={content.leerbedrijf.width}
             height={content.leerbedrijf.height}
           />
-          <div className="measure">
+          <div className="measure stack">
             <p>Ons motto is vakmanschap en kwaliteit.</p>
+            <p>
+              Peter en Dave Assink voeren het bedrijf vanuit de Fokkerstraat. Het leerbedrijf zit in het werk zelf:
+              voorbereiden, schilderen, glas en herstel, op de steiger en in huis.
+            </p>
             <div className="cta-row">
               <Link href="/over-ons" className="btn btn-ghost">
                 Over ons
@@ -214,7 +218,18 @@ export default function Home() {
         color="#e4d3b8"
         fan="5deg"
         lede="Wij werken in Markelo en de Hof van Twente, voor particuliere en zakelijke opdrachtgevers."
-      />
+      >
+        <div className="measure stack">
+          <p>
+            Het adres is Fokkerstraat 55, 7475 CB Markelo, in Overijssel. Verder dan Markelo en de Hof van Twente
+            noemen wij ons werkgebied niet.
+          </p>
+          <p>
+            Particulier en zakelijk zijn beide welkom. Voor het lage btw-tarief van 9 procent geldt een eigen afspraak:
+            een particuliere woning ouder dan twee jaar, en alleen het binnen- en buitenschilderwerk.
+          </p>
+        </div>
+      </Section>
 
       <Section
         id="contact"

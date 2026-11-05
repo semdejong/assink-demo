@@ -7,11 +7,14 @@ export function SiteFooter() {
       <div className="footer-grid">
         <div className="stack">
           <p className="footer-name">{content.company.name}</p>
+          <p>{content.company.tagline}</p>
           <p>{content.company.signOff}</p>
           <address>
             {content.address.street}
             <br />
             {content.address.postal} {content.address.city}
+            <br />
+            {content.company.region}, {content.company.province}
           </address>
         </div>
         <div className="footer-links">
@@ -25,6 +28,14 @@ export function SiteFooter() {
           </a>
           <p>KvK {content.kvk}</p>
         </div>
+        <nav className="footer-links" aria-label="Inhoud">
+          {content.nav.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+          <a href="/mvo">MVO</a>
+        </nav>
         <div className="footer-links">
           {content.socials.map((social) => (
             <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">

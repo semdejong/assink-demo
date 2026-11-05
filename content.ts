@@ -149,15 +149,106 @@ export const content = {
   },
 
   glass: [
-    "Gefigureerd glas",
-    "Enkel glas",
-    "Veiligheidsglas",
-    "Zonwerende beglazing",
-    "Spiegels met of zonder facetrand",
-    "Gezandstraald glas",
-    "Glas in lood, ook verpakt in isolerende beglazing",
-    "Glazen deuren, zoals douchewanden",
-    "Isolerende beglazing, zoals HR++",
+    {
+      name: "Gefigureerd glas",
+      color: "#2f4a3a",
+      text: "Glas met een reliëf of een patroon. Het laat licht door en breekt het doorzicht, bijvoorbeeld in een voordeur, een zijlicht of een badkamer.",
+    },
+    {
+      name: "Enkel glas",
+      color: "#1f3329",
+      text: "Eén blad glas. Passend waar isolatie niet de vraag is, of als tijdelijke ruit tot het juiste glas er is.",
+    },
+    {
+      name: "Veiligheidsglas",
+      color: "#7a4a2a",
+      text: "Glas dat bij breuk niet in grote scherven uiteenvalt, of dat langer heel blijft. Wij zetten het in waar de norm dat vraagt.",
+    },
+    {
+      name: "Zonwerende beglazing",
+      color: "#e26f1e",
+      text: "Beglazing die een deel van de zonnewarmte buiten houdt, zodat een vertrek minder snel opwarmt.",
+    },
+    {
+      name: "Spiegels, met of zonder facetrand",
+      color: "#f0d2b4",
+      text: "Een spiegel op maat, met een geslepen facetrand of met een strakke kant. Wij plaatsen hem waar u hem wilt hebben.",
+    },
+    {
+      name: "Gezandstraald glas",
+      color: "#4e301c",
+      text: "Het oppervlak wordt mat, over de hele ruit of in een tekening. Het glas blijft, het doorzicht verdwijnt waar u dat wilt.",
+    },
+    {
+      name: "Glas in lood",
+      color: "#3e5c4a",
+      text: "Loodprofielen houden de stukjes glas bij elkaar. Het kan ook verpakt worden in isolerende beglazing, zodat het patroon blijft en de ruit toch isoleert.",
+    },
+    {
+      name: "Glazen deuren, zoals douchewanden",
+      color: "#5c3820",
+      text: "Een deur of een wand van glas, bijvoorbeeld een douchewand. Wij voeren hem uit met het oog op doorval en op het dagelijks gebruik.",
+    },
+    {
+      name: "Isolerende beglazing, zoals HR++",
+      color: "#211c17",
+      text: "Dubbel glas met een coating en een spouw. Voor een woning die u beter wilt isoleren, binnen hetzelfde kozijn waar dat past.",
+    },
+  ],
+
+  elements: [
+    {
+      name: "Vocht",
+      color: "#2f4a3a",
+      ink: "#f3ece0",
+      text: "Zonder vocht geen houtrot. Een open naad, een kapotte verflaag of een goot die niet loopt, houdt het hout nat.",
+    },
+    {
+      name: "Warmte",
+      color: "#e26f1e",
+      ink: "#211c17",
+      text: "Warmte versnelt wat vocht is begonnen. Een kozijn op de zon heeft het zwaarder dan hout in de schaduw.",
+    },
+    {
+      name: "Zuurstof",
+      color: "#d4b48c",
+      ink: "#211c17",
+      text: "De aantasting heeft lucht nodig. Waar het hout kan ademen én nat blijft, gaat het proces door.",
+    },
+    {
+      name: "Voedingsbodem",
+      color: "#7a4a2a",
+      ink: "#f3ece0",
+      text: "Hout zelf is de voedingsbodem. De kwaliteit van die ondergrond bepaalt hoe snel het misgaat.",
+    },
+  ],
+
+  layers: [
+    {
+      name: "Stofvrij",
+      color: "#c6ae90",
+      text: "Eerst schuren wij de wand stofvrij. De nieuwe laag heeft alleen iets aan een schone ondergrond.",
+    },
+    {
+      name: "Sauzen",
+      color: "#e0b48a",
+      text: "Sauzen is de rustige basis: de kleur egaal opzetten, nadat oneffenheden zijn bijgewerkt.",
+    },
+    {
+      name: "Spuiten",
+      color: "#e26f1e",
+      text: "Spuitwerk legt een glad vlak. U ziet het op de plaat: een lichte wand, vanaf de trap gezet.",
+    },
+    {
+      name: "Glasweefsel",
+      color: "#2f4a3a",
+      text: "Een doek op de wand, daarna geschilderd. Het geeft een stevige ondergrond waar de muur dat kan gebruiken.",
+    },
+    {
+      name: "Behang",
+      color: "#7a4a2a",
+      text: "Van een authentiek patroon tot de laatste trend. Een groot motief kan een smalle gang diepte geven.",
+    },
   ],
 
   faq: [

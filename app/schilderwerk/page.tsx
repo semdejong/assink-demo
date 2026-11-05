@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { content, plateById } from "@/content";
 import { Plate, PlateSet } from "@/components/site/Plate";
-import { BtwBlock, CtaRow, Section, WaysBlock } from "@/components/site/Parts";
+import { BtwBlock, Chapter, CtaRow, Section, WaysBlock } from "@/components/site/Parts";
 import { QuoteForm } from "@/components/site/QuoteForm";
 
 export const metadata: Metadata = {
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function SchilderwerkPage() {
   return (
     <>
-      <header className="intro" data-section="intro">
-        <p className="kicker">Schilderwerk</p>
-        <h1>Schilderwerk binnen en buiten</h1>
-        <p className="lede">
-          Een huis schilderen vergt tijd en vakmanschap. Wij schilderen binnen en buiten, voor particuliere en zakelijke
-          opdrachtgevers in Markelo en de Hof van Twente. Ons motto is vakmanschap en kwaliteit.
-        </p>
+      <Chapter
+        kicker="Lak"
+        title="Schilderwerk binnen en buiten"
+        lede="Een huis schilderen vergt tijd en vakmanschap. Wij schilderen binnen en buiten, voor particuliere en zakelijke opdrachtgevers in Markelo en de Hof van Twente. Ons motto is vakmanschap en kwaliteit."
+        color="#e26f1e"
+        fan="-5deg"
+      >
         <CtaRow href="#offerte" />
-      </header>
+      </Chapter>
       <div className="hero-stage" style={{ marginTop: "2rem" }}>
         <Plate plate={plateById("scaffold")} priority />
       </div>
@@ -52,6 +52,10 @@ export default function SchilderwerkPage() {
             van het hele huis, en ook wanneer u de rest zelf schildert.
           </p>
           <p>Werken op hoogte doen wij met een steiger of een hoogwerker, afhankelijk van het gebouw.</p>
+          <p>
+            Ramen en goten van de hervormde kerk, en het schilderwerk aan rietgedekte huizen, horen bij hetzelfde
+            buitenschilderwerk. Het gebouw verandert. De zorg voor de ondergrond blijft.
+          </p>
         </div>
         <PlateSet ids={["hoogte-dak", "hoogte-tuin", "kerk"]} />
       </Section>
@@ -95,6 +99,32 @@ export default function SchilderwerkPage() {
           <Link href="/werk" className="btn btn-ghost">
             Heel het staalboek
           </Link>
+        </div>
+      </Section>
+
+      <Section
+        name="voorbereiding"
+        title="Wat een telefoontje al duidelijk maakt"
+        color="#211c17"
+        fan="-3deg"
+        lede="U hoeft geen bestek te schrijven. Drie antwoorden zijn genoeg om te zien of u een uurtarief, een offerte of een gedeelde klus wilt."
+      >
+        <div className="ways">
+          <article style={{ ["--rule-color" as string]: "#e26f1e" }}>
+            <h3>Binnen, buiten, of beide</h3>
+            <p>{content.form.ligging.join(", ")}. Noem de ruimtes of de gevel, dan weten wij waar wij moeten kijken.</p>
+          </article>
+          <article style={{ ["--rule-color" as string]: "#2f4a3a" }}>
+            <h3>Het soort werk</h3>
+            <p>
+              {content.form.soort.join(", ")}. Twijfelt u tussen schilderwerk en herstel, dan kijken wij eerst naar het
+              hout of het beton.
+            </p>
+          </article>
+          <article style={{ ["--rule-color" as string]: "#7a4a2a" }}>
+            <h3>De afspraak</h3>
+            <p>{content.form.manier.join(", ")}. U noemt de voorkeur aan de telefoon, of u zet hem in het formulier.</p>
+          </article>
         </div>
       </Section>
 

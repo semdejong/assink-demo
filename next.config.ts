@@ -23,6 +23,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/schilderwerk.html", destination: "/schilderwerk", permanent: true },
+      { source: "/glas.html", destination: "/glas", permanent: true },
+      { source: "/houtrot.html", destination: "/houtrot-en-betonreparatie", permanent: true },
+      { source: "/mvo.html", destination: "/mvo", permanent: true },
+      { source: "/impressie.html", destination: "/werk", permanent: true },
+      { source: "/contact.html", destination: "/contact", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

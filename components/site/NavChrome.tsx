@@ -9,7 +9,7 @@ import { Fan, chipStyle } from "./Fan";
 
 const sheetLinks = [
   ...content.nav,
-  { href: "/mvo", label: "Mvo", fan: "0deg", color: "#2f4a3a", ink: "#f3ece0" },
+  { href: "/mvo", label: "MVO", fan: "0deg", color: "#2f4a3a", ink: "#f3ece0" },
   { href: "/privacy", label: "Privacy", fan: "0deg", color: "#e4d3b8", ink: "#211c17" },
 ];
 

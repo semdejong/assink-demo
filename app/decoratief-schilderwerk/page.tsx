@@ -15,7 +15,7 @@ export default function DecoratiefPage() {
   return (
     <>
       <Chapter
-        kicker="Fijn"
+        kicker="Hand"
         title="Decoratief schilderwerk"
         lede="Naast het onderhoudswerk schilderen wij wat een vaste hand vraagt: bladgoud, houtimitatie, handgeschilderde keukens en meubels die opnieuw worden afgewerkt."
         color="#4e301c"

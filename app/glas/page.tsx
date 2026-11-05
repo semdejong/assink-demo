@@ -14,7 +14,7 @@ export default function GlasPage() {
       <Chapter
         kicker="Glas"
         title="Alle soorten glas"
-        lede="Heeft u glasschade of ruitbreuk, dan doen wij ons best dit zo snel mogelijk te verhelpen. Is de ruit of het isolatieglas niet voorradig, dan zorgen wij voor een noodoplossing, zodat het gat niet open blijft liggen."
+        lede="Heeft u glasschade of ruitbreuk, dan doen wij ons best dit zo snel mogelijk te verhelpen. Is de ruit of het isolatieglas niet voorradig, dan zorgen wij voor een noodoplossing, zodat de opening dicht zit tot de juiste ruit er is."
         color="#2f4a3a"
         ink="#f3ece0"
         fan="-4deg"

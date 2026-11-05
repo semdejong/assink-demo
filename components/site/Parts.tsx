@@ -167,7 +167,7 @@ export function Chapter({
           <span className="chip-label">{kicker}</span>
         </span>
       </Fan>
-      <div>
+      <div className="chapter-copy">
         <h1>{title}</h1>
         <p className="lede">{lede}</p>
         {children}
@@ -201,18 +201,16 @@ export function AddressFacts() {
           </a>
         </dd>
       </div>
-      <div>
-        <dt>Telefoon</dt>
-        <dd>
-          {content.phones.map((phone) => (
-            <div key={phone.href}>
-              <a href={phone.href} data-cta={ctaType(phone.href)}>
-                {phone.kind} {phone.label}
-              </a>
-            </div>
-          ))}
-        </dd>
-      </div>
+      {content.phones.map((phone) => (
+        <div key={phone.href}>
+          <dt>{phone.kind}</dt>
+          <dd>
+            <a href={phone.href} data-cta={ctaType(phone.href)}>
+              {phone.label}
+            </a>
+          </dd>
+        </div>
+      ))}
       <div>
         <dt>E-mail</dt>
         <dd>

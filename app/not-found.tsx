@@ -5,7 +5,7 @@ import { Chapter } from "@/components/site/Parts";
 export default function NotFound() {
   return (
     <Chapter
-      kicker="Leeg"
+      kicker="Zoek"
       title="Deze pagina bestaat niet"
       lede="De inhoud die u zoekt staat niet in dit staalboek. De hoofdstukken hieronder wel."
       color="#7a4a2a"

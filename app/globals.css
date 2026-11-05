@@ -123,7 +123,7 @@ img {
 }
 
 .sleads-badge {
-  bottom: 5.1rem;
+  bottom: 4.55rem;
   left: 0.75rem;
 }
 
@@ -354,7 +354,7 @@ img {
 .hero-grid {
   display: grid;
   gap: 2.25rem;
-  align-items: end;
+  align-items: start;
 }
 
 .hero-grid > * {
@@ -456,10 +456,11 @@ img {
   display: flex;
   gap: 0.85rem;
   margin-top: 1.35rem;
-  padding: 1.4rem 0.2rem 0.4rem;
+  padding: 1.5rem 1.25rem 0.55rem 0.15rem;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   max-width: 100%;
+  scroll-padding-inline: 0.15rem;
 }
 
 .disc {
@@ -569,9 +570,42 @@ img {
 }
 
 .gold-block {
+  display: grid;
+  grid-template-columns: 4.6rem minmax(0, 1fr);
+  gap: 0.35rem 1.05rem;
+  align-items: end;
   margin-top: 1.6rem;
-  padding-top: 1rem;
+  padding-top: 1.15rem;
   border-top: 3px solid #b88a2e;
+}
+
+.gold-block > .fan {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.gold-block > .measure {
+  display: contents;
+}
+
+.gold-block h2,
+.gold-block h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  min-width: 0;
+}
+
+.gold-block > .lede,
+.gold-block p {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.gold-block > .plate {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin-top: 0.45rem;
 }
 
 .section.gold-block {
@@ -596,13 +630,36 @@ img {
 
 .chapter {
   display: grid;
-  gap: 1.35rem;
-  align-items: start;
+  grid-template-columns: 4.6rem minmax(0, 1fr);
+  column-gap: 1rem;
+  row-gap: 0.15rem;
+  align-items: end;
+  max-width: 50rem;
+}
+
+.chapter > .fan {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.chapter-copy {
+  display: contents;
+}
+
+.chapter h1 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+}
+
+.chapter .lede,
+.chapter .cta-row {
+  grid-column: 1 / -1;
 }
 
 .chapter-chip {
-  width: 4.5rem;
-  min-height: 8.2rem;
+  width: 4.35rem;
+  min-height: 6.1rem;
   transform-origin: center bottom;
 }
 
@@ -869,6 +926,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  overflow-wrap: anywhere;
 }
 
 .sheet {
@@ -907,7 +965,7 @@ textarea {
 }
 
 .sheet a[aria-current="page"] {
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .sheet-swatch {
@@ -922,10 +980,25 @@ textarea {
   scroll-margin-top: 13rem;
 }
 
+@media (min-width: 1100px) {
+  .disc-fan {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1rem 0.8rem;
+    overflow: visible;
+    padding-right: 0.15rem;
+  }
+
+  .disc {
+    width: auto;
+    min-width: 0;
+  }
+}
+
 @media (min-width: 800px) {
   .chapter {
-    grid-template-columns: 5.2rem minmax(0, 42rem);
-    gap: 1.8rem;
+    grid-template-columns: 4.8rem minmax(0, 42rem);
+    column-gap: 1.2rem;
   }
 
   .quad {
@@ -1018,8 +1091,8 @@ textarea {
 
   .index-fan .chip {
     flex: 0 0 auto;
-    width: 5.5rem;
-    min-height: 5.35rem;
+    width: 6.2rem;
+    min-height: 5.15rem;
     scroll-snap-align: start;
     transform-origin: center bottom;
   }
@@ -1106,4 +1179,15 @@ textarea {
   .fan.is-fanned .chip:focus-visible {
     transform: rotate(var(--fan));
   }
+}
+
+.chapter .chip,
+.gold-block .chip,
+.chapter .fan.is-fanned .chip,
+.gold-block .fan.is-fanned .chip,
+.chapter .fan.is-fanned .chip:hover,
+.gold-block .fan.is-fanned .chip:hover,
+.chapter .fan.is-fanned .chip:focus-visible,
+.gold-block .fan.is-fanned .chip:focus-visible {
+  transform: none;
 }
